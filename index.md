@@ -23,7 +23,7 @@ Exmaple of initial scatter plot used for data exploration.
 ggplot(movies, aes(x = budget, y = revenue)) + geom_point(alpha = 0.5) + labs(title = "Exploratory Analysis")
 ```
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.png)
 
 ---
 
@@ -39,14 +39,16 @@ Additional controls on the left can be used to select the columns, the algorithm
 # Adjustment and Validation
 When a prediction model is calculated, the controls on the left can be adjusted to calculate a new model.
 As a validation the R square value and a residual plot is printed.
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-9](assets/fig/unnamed-chunk-9-1.png)
 
 
 ---
 
 # Links
 
-The application can be used at RPubs with this link:
+The application can be used at RPubs with this link:  
+https://ilja-muhl.shinyapps.io/Movie-Predictions/
 
-The Code for the application is uploaded to github:
+The Code for the application is uploaded to github:  
+https://github.com/imuhl/Movie-Predictions
 

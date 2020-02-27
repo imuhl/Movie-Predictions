@@ -12,7 +12,7 @@ This presentaion describes a Shiny Web Application created in the coursera cours
 The application uses [Movie Data](https://www.kaggle.com/tmdb/tmdb-movie-metadata#tmdb_5000_movies.csv) from kaggle.
 The data can be explored in a scatter plot and further the revenue can be predicted by selecting the columns, the algorithm and the percentage of data to use for the prediction
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(data.table)
 library(ggplot2)
 library(caret)
@@ -54,8 +54,9 @@ ggplot(data = movies, aes(x = 1:nrow(movies), y = resid(fit))) +
 
 # Links
 
-The application can be used at RPubs with this link:
+The application can be used at RPubs with this link:  
 https://ilja-muhl.shinyapps.io/Movie-Predictions/
 
-The Code for the application is uploaded to github:
+The Code for the application is uploaded to github:  
+https://github.com/imuhl/Movie-Predictions
 
