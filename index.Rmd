@@ -55,6 +55,7 @@ ggplot(data = movies, aes(x = 1:nrow(movies), y = resid(fit))) +
 # Links
 
 The application can be used at RPubs with this link:
+https://ilja-muhl.shinyapps.io/Movie-Predictions/
 
 The Code for the application is uploaded to github:
 
