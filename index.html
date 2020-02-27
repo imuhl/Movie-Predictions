@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction Web Application</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Prediction Web Application">
+  <meta name="author" content="Ilja Muhl">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  
+  <hgroup class="auto-fadein">
+    <h1>Prediction Web Application</h1>
+    <h2>27-02-2020</h2>
+    <p>Ilja Muhl<br/></p>
+  </hgroup>
+  
+  <article></article>  
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h1>Summary</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>This presentaion describes a Shiny Web Application created in the coursera course <a href="https://www.coursera.org/learn/data-products">Developing Data Products</a>.</p>
+
+<p>The application uses <a href="https://www.kaggle.com/tmdb/tmdb-movie-metadata#tmdb_5000_movies.csv">Movie Data</a> from kaggle.
+The data can be explored in a scatter plot and further the revenue can be predicted by selecting the columns, the algorithm and the percentage of data to use for the prediction</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h1>Code Example</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Exmaple of initial scatter plot used for data exploration.</p>
+
+<pre><code class="r">ggplot(movies, aes(x = budget, y = revenue)) + geom_point(alpha = 0.5) + labs(title = &quot;Exploratory Analysis&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <hgroup>
+    <h1>Prediction</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>The prediction is calculated with the train function in the caret package.</p>
+
+<pre><code class="r">fit2 &lt;- train(revenue ~ .,data = trainData, method = input$selectModel)
+</code></pre>
+
+<p>Additional controls on the left can be used to select the columns, the algorithm and the percentage of data, that should be used to predict the revenue of a movie.</p>
+
+<h1>Adjustment and Validation</h1>
+
+<p>When a prediction model is calculated, the controls on the left can be adjusted to calculate a new model.
+As a validation the R square value and a residual plot is printed.
+<img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h1>Links</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>The application can be used at RPubs with this link:</p>
+
+<p>The Code for the application is uploaded to github:</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Summary'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Code Example'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Prediction'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Links'>
+         4
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
